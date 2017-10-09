@@ -18,7 +18,7 @@ def shell():
     Se o ipython estiver instalado ira iniciar um shell Ipython
     Caso contrário iniciara um shell Python puro.
     """
-    click.echo(f'Iniciando o shell do {app.config.SITENAME}')
+    click.echo('Iniciando o shell do {}'.format(app.config.SITENAME))
     with app.app_context():
         try:
             from IPython import start_ipython
@@ -35,7 +35,7 @@ def shell():
 def runserver(debug, reloader, host, port):
     """Inicia o servidor em modo dev/debug"""
     app.run(debug=debug, use_reloader=reloader, host=host, port=port,
-            extra_files=[f'{app.root_path}/settings.yml'])
+            extra_files=['{}/settings.yml'.format(app.root_path)])
 
 
 @main.command()
@@ -48,10 +48,10 @@ def adduser(username, password):
         try:
             app.db.create_user(username, password)
         except Exception as e:
-            click.echo(f'Nao foi possivel criar o usuario {username}')
+            click.echo('Nao foi possivel criar o usuario {}'.format(username))
             raise
         else:
-            click.echo(f"Usuario {username} criado com sucesso!")
+            click.echo("Usuario {} criado com sucesso!".format(username))
 
 
 if __name__ == "__main__":

@@ -12,6 +12,6 @@ def configure(app):
             factory = import_string(extension)
             factory(app)
         except Exception as e:
-            app.logger.error(f'Erro ao carregar {extension}: {e}')
+            app.logger.error('Erro ao carregar {}: {}'.format(extension, e))
         else:
-            app.logger.debug(f'Extensao {extension} carregada com sucesso!')
+            app.logger.debug('Extensao {} carregada com sucesso!'.format(extension))

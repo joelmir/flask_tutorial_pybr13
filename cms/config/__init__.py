@@ -14,5 +14,5 @@ def configure(app):
     FlaskDynaconf(
         app=app,
         DYNACONF_NAMESPACE='CMS',
-        SETTINGS_MODULE=f'{app.root_path}/settings.yml'
+        SETTINGS_MODULE='{}/settings.yml'.format(app.root_path)
     )
