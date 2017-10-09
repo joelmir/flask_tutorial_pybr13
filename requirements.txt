@@ -19,4 +19,4 @@ pytest_flask
 flake8
 flask_debugtoolbar
 
--e .
+# -e .

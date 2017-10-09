@@ -4,3 +4,11 @@
 build/
 *__pycache__*
 cms/database
+
+
+bin/
+include/
+lib/
+lib64
+pip-selfcheck.json
+
